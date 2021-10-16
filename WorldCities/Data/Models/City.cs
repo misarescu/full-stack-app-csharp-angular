@@ -42,6 +42,7 @@ namespace WorldCities.Data.Models
          * City latitude
          * </summary>
          */
+        [Column(TypeName ="decimal(7,4)")]
         public decimal Lat { get; set; }
 
         /*
@@ -49,6 +50,7 @@ namespace WorldCities.Data.Models
          * City longitude
          * </summary>
          */
+        [Column(TypeName = "decimal(7,4)")]
         public decimal Lon { get; set; }
         #endregion
 
@@ -57,6 +59,15 @@ namespace WorldCities.Data.Models
          * Country Id (foreign key)
          * </summary>
          */
+        [ForeignKey("Country")]
         public int CountryId { get; set; }
+        #region Navigation Properties
+        /*
+         * <summary>
+         * The country related to this city
+         * </summary>
+         */
+        public virtual Country Country { get; set; }
+        #endregion
     }
 }

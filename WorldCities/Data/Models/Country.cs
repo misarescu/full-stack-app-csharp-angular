@@ -46,5 +46,14 @@ namespace WorldCities.Data.Models
          */
         public string ISO3 { get; set; }
         #endregion
+
+        #region Navigation Properties
+        /*
+         * <summary>
+         * A list containing all the cities related to this country.
+         * </summary>
+         */
+        public virtual List<City> Cities { get; set; }
+        #endregion
     }
 }
