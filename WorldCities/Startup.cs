@@ -41,8 +41,11 @@ namespace WorldCities
             services.AddEntityFrameworkSqlServer();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")
+                // options.UseSqlServer(
+                //     Configuration.GetConnectionString("DefaultConnection")
+                //     )
+                options.UseMySQL(
+                    Configuration.GetConnectionString("MySqlConnection")
                     )
             );
         }
